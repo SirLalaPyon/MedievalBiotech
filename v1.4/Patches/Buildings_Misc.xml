@@ -3,6 +3,10 @@
 
     <!-- Gene Extractor-->
     <Operation Class="PatchOperationRemove">
+		<xpath>Defs/ThingDef[defName="GeneExtractor"]/comps/li[@Class = "CompProperties_Power"]</xpath>
+	</Operation>
+
+	<Operation Class="PatchOperationRemove">
 		<xpath>Defs/ThingDef[defName="GeneExtractor"]/costList</xpath>
 	</Operation>
 
