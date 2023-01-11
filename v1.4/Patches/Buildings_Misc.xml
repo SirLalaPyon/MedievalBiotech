@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+    <!-- Gene Extractor-->
+    <Operation Class="PatchOperationRemove">
+		<xpath>Defs/ThingDef[defName="GeneExtractor"]/costList</xpath>
+	</Operation>
+
+    <Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="GeneExtractor"]/graphicData</xpath>
+		<value>
+			<shaderType>CutoutComplex</shaderType>
+		</value>
+	</Operation>
+
+    <Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="GeneExtractor"]</xpath>
+		<value>
+			<costStuffCount>100</costStuffCount>
+            <stuffCategories>
+                    <li>DankPyon_RawWood</li>
+                    <li>Woody</li>
+            </stuffCategories>
+		</value>
+	</Operation>
+  
+</Patch>
