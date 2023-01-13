@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using Verse;
 
-namespace ConsumableGenepack {
+namespace ConsumableGenepack
+{
     public class ConsumableGenepack : ThingComp {
         public CompProperties_ConsumableGenepack Props => (CompProperties_ConsumableGenepack)props;
         public override void PostIngested(Pawn ingester) {
