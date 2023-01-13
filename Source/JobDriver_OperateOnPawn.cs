@@ -28,6 +28,13 @@ namespace ConsumableGenepack
             yield return Toils_Goto.GotoThing(TargetIndex.A, PathEndMode.InteractionCell);
             var operateToil = new Toil();
             operateToil.defaultCompleteMode = ToilCompleteMode.Never;
+            operateToil.initAction = delegate
+            {
+                if (PawnOperated.Dead is false)
+                {
+                    HealthUtility.TryAnesthetize(PawnOperated);
+                }
+            };
             operateToil.tickAction = delegate
             {
                 var speed = pawn.GetStatValue(StatDefOf.MedicalTendSpeed) * OperateSpeedMultiplier;
