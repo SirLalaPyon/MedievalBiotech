@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<!-- Remove electricity from every Biotech Building-->
+    <Operation Class="PatchOperationRemove">
+		<xpath>Defs/ThingDef[defName="DeathrestCasket" or 
+							defName="Hemopump" or 
+							defName="HemogenAmplifier" or 
+							defName="GlucosoidPump" or 
+							defName="PsychofluidPump" or 
+							defName="DeathrestAccelerator"]/comps/li[@Class = "CompProperties_Power"]</xpath>
+	</Operation>
+
+	<!-- ===== Deathrest Casket =====-->
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="DeathrestCasket"]/graphicData</xpath>
+		<value>
+			<shaderType>CutoutComplex</shaderType>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="DeathrestCasket"]/costList</xpath>
+		<value>
+			<costList>
+				<DankPyon_ComponentBasic>3</DankPyon_ComponentBasic>
+			</costList>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="DeathrestCasket"]</xpath>
+		<value>
+			<costStuffCount>100</costStuffCount>
+            <stuffCategories>
+                    <li>DankPyon_RawWood</li>
+                    <li>Woody</li>
+            </stuffCategories>
+		</value>
+	</Operation>
+
+	<!-- ===== Deathrest Accelerator =====-->
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="DeathrestAccelerator"]/graphicData/drawSize</xpath>
+		<value>
+			<drawSize>(2, 2)</drawSize>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="DeathrestAccelerator"]/label</xpath>
+		<value>
+			<label>deathrest incense</label>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="DeathrestAccelerator"]</xpath>
+		<value>
+			<costStuffCount>100</costStuffCount>
+            <stuffCategories>
+                    <li>DankPyon_RawWood</li>
+                    <li>Woody</li>
+					<li>Metallic</li>
+					<li>Stony</li>
+            </stuffCategories>
+		</value>
+	</Operation>
+</Patch>

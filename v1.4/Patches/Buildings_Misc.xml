@@ -3,7 +3,9 @@
 
     <!-- Remove electricity from every Biotech Building-->
     <Operation Class="PatchOperationRemove">
-		<xpath>Defs/ThingDef[defName="GeneExtractor" or defName="GeneBank"]/comps/li[@Class = "CompProperties_Power"]</xpath>
+		<xpath>Defs/ThingDef[defName="GeneExtractor" or 
+							defName="GeneBank" or 
+							defName="GeneAssembler"]/comps/li[@Class = "CompProperties_Power"]</xpath>
 	</Operation>
 
 	<!-- ===== Gene Extractor =====-->
@@ -73,5 +75,46 @@
             </stuffCategories>
 		</value>
 	</Operation>
-	
+
+	<!-- ===== Gene Assembler =====-->
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="GeneAssembler"]/graphicData/drawSize</xpath>
+		<value>
+			<drawSize>(5, 4)</drawSize>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="GeneAssembler"]/graphicData</xpath>
+		<value>
+			<shaderType>CutoutComplex</shaderType>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="GeneAssembler"]/label</xpath>
+		<value>
+			<label>Mutagen Assembler</label>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="GeneAssembler"]</xpath>
+		<value>
+			<costStuffCount>200</costStuffCount>
+            <stuffCategories>
+					<li>Metallic</li>
+					<li>Stony</li>
+            </stuffCategories>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="GeneAssembler"]/costList</xpath>
+		<value>
+			<costList>
+				<DankPyon_ComponentBasic>10</DankPyon_ComponentBasic>
+			</costList>
+		</value>
+	</Operation>
 </Patch>
