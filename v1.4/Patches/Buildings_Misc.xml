@@ -1,19 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
 
-    <!-- Gene Extractor-->
+    <!-- Remove electricity from every Biotech Building-->
     <Operation Class="PatchOperationRemove">
-		<xpath>Defs/ThingDef[defName="GeneExtractor"]/comps/li[@Class = "CompProperties_Power"]</xpath>
+		<xpath>Defs/ThingDef[defName="GeneExtractor" or defName="GeneBank"]/comps/li[@Class = "CompProperties_Power"]</xpath>
 	</Operation>
 
-	<Operation Class="PatchOperationRemove">
-		<xpath>Defs/ThingDef[defName="GeneExtractor"]/costList</xpath>
-	</Operation>
-
-    <Operation Class="PatchOperationAdd">
+	<!-- ===== Gene Extractor =====-->
+	<Operation Class="PatchOperationAdd">
 		<xpath>Defs/ThingDef[defName="GeneExtractor"]/graphicData</xpath>
 		<value>
 			<shaderType>CutoutComplex</shaderType>
+		</value>
+	</Operation>
+
+    <Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="GeneExtractor"]/label</xpath>
+		<value>
+			<label>Mutagen Harvester</label>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="GeneExtractor"]/costList</xpath>
+		<value>
+			<costList>
+				<DankPyon_ComponentBasic>15</DankPyon_ComponentBasic>
+			</costList>
 		</value>
 	</Operation>
 
@@ -24,8 +37,41 @@
             <stuffCategories>
                     <li>DankPyon_RawWood</li>
                     <li>Woody</li>
+					<li>Metallic</li>
+					<li>Stony</li>
             </stuffCategories>
 		</value>
 	</Operation>
-  
+
+
+	<!-- ===== Gene Bank =====-->
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="GeneBank"]/costList</xpath>
+		<value>
+			<costList>
+				<DankPyon_ComponentBasic>5</DankPyon_ComponentBasic>
+			</costList>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="GeneBank"]/graphicData/drawSize</xpath>
+		<value>
+			<drawSize>(2, 2)</drawSize>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="GeneBank"]</xpath>
+		<value>
+			<costStuffCount>50</costStuffCount>
+            <stuffCategories>
+                    <li>DankPyon_RawWood</li>
+                    <li>Woody</li>
+					<li>Metallic</li>
+					<li>Stony</li>
+            </stuffCategories>
+		</value>
+	</Operation>
+	
 </Patch>
