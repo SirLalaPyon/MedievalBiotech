@@ -5,7 +5,8 @@
     <Operation Class="PatchOperationRemove">
 		<xpath>Defs/ThingDef[defName="GeneExtractor" or 
 							defName="GeneBank" or 
-							defName="GeneAssembler"]/comps/li[@Class = "CompProperties_Power"]</xpath>
+							defName="GeneAssembler" or
+							defName="GeneProcessor"]/comps/li[@Class = "CompProperties_Power"]</xpath>
 	</Operation>
 
 	<!-- ===== Gene Extractor =====-->
@@ -19,7 +20,14 @@
     <Operation Class="PatchOperationReplace">
 		<xpath>Defs/ThingDef[defName="GeneExtractor"]/label</xpath>
 		<value>
-			<label>Mutagen Harvester</label>
+			<label>mutagen harvester</label>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="GeneExtractor"]/description</xpath>
+		<value>
+			<description>A crude surgical table designated for pawns to extract a person's genes and create a gene potions from them. The extracted genes will be randomly selected from the person's xenogenes and germline genes. You can force someone into the machine, but they won't like it.\n\nExtracting a person's genes while their genes are currently regrowing will kill them. Otherwise, gene extraction causes no lasting harm.\n\nGenes that require archite capsules are too complex to be extracted.</description>
 		</value>
 	</Operation>
 
@@ -94,7 +102,7 @@
 	<Operation Class="PatchOperationReplace">
 		<xpath>Defs/ThingDef[defName="GeneAssembler"]/label</xpath>
 		<value>
-			<label>Mutagen Assembler</label>
+			<label>mutagen assembler</label>
 		</value>
 	</Operation>
 
@@ -115,6 +123,48 @@
 			<costList>
 				<DankPyon_ComponentBasic>10</DankPyon_ComponentBasic>
 			</costList>
+		</value>
+	</Operation>
+
+	<!-- ===== Gene Processor =====-->
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="GeneProcessor"]/graphicData/drawSize</xpath>
+		<value>
+			<drawSize>(4, 4)</drawSize>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="GeneProcessor"]/graphicData</xpath>
+		<value>
+			<shaderType>CutoutComplex</shaderType>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="GeneProcessor"]/label</xpath>
+		<value>
+			<label>mutagen distillery</label>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="GeneProcessor"]/costList</xpath>
+		<value>
+			<costList>
+				<DankPyon_ComponentBasic>10</DankPyon_ComponentBasic>
+			</costList>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="GeneProcessor"]</xpath>
+		<value>
+			<costStuffCount>199</costStuffCount>
+            <stuffCategories>
+					<li>Metallic</li>
+					<li>Stony</li>
+            </stuffCategories>
 		</value>
 	</Operation>
 </Patch>
