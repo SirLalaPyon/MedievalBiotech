@@ -8,6 +8,13 @@
 							defName="GeneAssembler" or
 							defName="GeneProcessor"]/comps/li[@Class = "CompProperties_Power"]</xpath>
 	</Operation>
+	
+    <Operation Class="PatchOperationRemove">
+		<xpath>Defs/ThingDef[defName="GeneExtractor" or 
+							defName="GeneBank" or 
+							defName="GeneAssembler" or
+							defName="GeneProcessor"]/comps/li[@Class = "CompProperties_Flickable"]</xpath>
+	</Operation>
 
 	<!-- ===== Gene Extractor =====-->
 	<Operation Class="PatchOperationAdd">
@@ -88,6 +95,30 @@
 					<li>Metallic</li>
 					<li>Stony</li>
             </stuffCategories>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="GeneBank"]/tickerType</xpath>
+		<value>
+			<tickerType>Normal</tickerType>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="GeneBank"]/comps</xpath>
+		<value>
+			<li Class="CompProperties_Refuelable">
+				<fuelConsumptionRate>0.5</fuelConsumptionRate>
+				<fuelCapacity>5</fuelCapacity>
+				<fuelFilter>
+				<thingDefs>
+					<li>InsectJelly</li>
+				</thingDefs>
+				</fuelFilter>
+				<initialFuelPercent>0</initialFuelPercent>
+				<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
+			</li>
 		</value>
 	</Operation>
 

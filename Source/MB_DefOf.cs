@@ -1,14 +1,15 @@
 ﻿using RimWorld;
 using Verse;
 
-namespace ConsumableGenepack
+namespace MedievalBiotech
 {
     [DefOf]
-    public static class CG_DefOf
+    public static class MB_DefOf
     {
         public static JobDef MB_OperateOnPawn;
         public static JobDef MB_CarryCorpseToTable;
         public static EffecterDef ButcherFlesh;
         public static SoundDef Recipe_ButcherCorpseFlesh;
+        public static ThingDef MB_GenePotionsRack;
     }
 }

@@ -8,7 +8,7 @@
                 <xpath>Defs/ThingDef[defName = "Genepack"]</xpath>
                 <value>
                     <comps>
-                        <li Class="ConsumableGenepack.CompProperties_ConsumableGenepack"></li>
+                        <li Class="MedievalBiotech.CompProperties_ConsumableGenepack"></li>
                     </comps>
                 </value>
             </li>

@@ -4,7 +4,7 @@ using UnityEngine;
 using Verse;
 using Verse.AI;
 
-namespace ConsumableGenepack
+namespace MedievalBiotech
 {
 
     public class JobDriver_OperateOnPawn : JobDriver
@@ -44,8 +44,8 @@ namespace ConsumableGenepack
                     GeneExtractor.Finish();
                 }
             };
-            operateToil.WithEffect(CG_DefOf.ButcherFlesh, TargetIndex.A);
-            operateToil.PlaySustainerOrSound(() => CG_DefOf.Recipe_ButcherCorpseFlesh);
+            operateToil.WithEffect(MB_DefOf.ButcherFlesh, TargetIndex.A);
+            operateToil.PlaySustainerOrSound(() => MB_DefOf.Recipe_ButcherCorpseFlesh);
             yield return operateToil;
         }
 

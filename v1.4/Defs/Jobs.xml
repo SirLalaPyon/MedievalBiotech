@@ -1,10 +1,10 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
   <WorkGiverDef>
     <defName>MB_OperateOnPawn</defName>
     <label>operate</label>
-    <giverClass>ConsumableGenepack.WorkGiver_OperateOnPawn</giverClass>
+    <giverClass>MedievalBiotech.WorkGiver_OperateOnPawn</giverClass>
     <workType>Doctor</workType>
     <verb>operate</verb>
     <gerund>operate</gerund>
@@ -17,13 +17,13 @@
 
   <JobDef>
     <defName>MB_OperateOnPawn</defName>
-    <driverClass>ConsumableGenepack.JobDriver_OperateOnPawn</driverClass>
+    <driverClass>MedievalBiotech.JobDriver_OperateOnPawn</driverClass>
     <reportString>operating on TargetB.</reportString>
   </JobDef>
   
   <JobDef>
     <defName>MB_CarryCorpseToTable</defName>
-    <driverClass>ConsumableGenepack.JobDriver_CarryCorpseToTable</driverClass>
+    <driverClass>MedievalBiotech.JobDriver_CarryCorpseToTable</driverClass>
     <reportString>carrying TargetB to TargetA.</reportString>
   </JobDef>
 </Defs>

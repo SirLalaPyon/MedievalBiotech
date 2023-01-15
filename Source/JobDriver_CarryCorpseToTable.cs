@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Verse;
 using Verse.AI;
 
-namespace ConsumableGenepack
+namespace MedievalBiotech
 {
     public class JobDriver_CarryCorpseToTable : JobDriver
     {

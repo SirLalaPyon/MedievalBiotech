@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Verse;
 
-namespace ConsumableGenepack
+namespace MedievalBiotech
 {
     public class ConsumableGenepack : ThingComp {
         public CompProperties_ConsumableGenepack Props => (CompProperties_ConsumableGenepack)props;

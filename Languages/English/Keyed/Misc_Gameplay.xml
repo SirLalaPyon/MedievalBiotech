@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
 
-	<CG.CarryCorpseToTable>Carry {0} to table for operations</CG.CarryCorpseToTable>
-	
+	<MB.CarryCorpseToTable>Carry {0} to table for operations</MB.CarryCorpseToTable>
+	<AlertGenebankUnpowered>Gene bank needs fuel</AlertGenebankUnpowered>
+	<AlertGenebankUnpoweredDesc>A gene potion bank does not have fuel, so the genepacks inside it are slowly deteriorating. Add insect jelly to the gene potion bank to prevent gene potions from deteriorating
+
+Once the gene potion bank is fueled. it will slowly reverse the deterioration of the gene potions inside it.</AlertGenebankUnpoweredDesc>
 </LanguageData>

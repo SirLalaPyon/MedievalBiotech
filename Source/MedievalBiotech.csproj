@@ -7,8 +7,8 @@
     <ProjectGuid>{00DE61BB-203D-456E-8324-AF5DAA5DE5CE}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BioTechEats</RootNamespace>
-    <AssemblyName>BioTechEats</AssemblyName>
+    <RootNamespace>MedievalBiotech</RootNamespace>
+    <AssemblyName>MedievalBiotech</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -42,7 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CG_DefOf.cs" />
+    <Compile Include="MB_DefOf.cs" />
     <Compile Include="ConsumableGenepack.cs" />
     <Compile Include="HarmonyPatches.cs" />
     <Compile Include="JobDriver_CarryCorpseToTable.cs" />

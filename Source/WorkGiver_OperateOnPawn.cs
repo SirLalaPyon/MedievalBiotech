@@ -2,7 +2,7 @@
 using Verse;
 using Verse.AI;
 
-namespace ConsumableGenepack
+namespace MedievalBiotech
 {
     public class WorkGiver_OperateOnPawn : WorkGiver_Scanner
     {
@@ -29,7 +29,7 @@ namespace ConsumableGenepack
         public override Job JobOnThing(Pawn pawn, Thing t, bool forced = false)
         {
             Building_GeneExtractor geneExtractor = t as Building_GeneExtractor;
-            return JobMaker.MakeJob(CG_DefOf.MB_OperateOnPawn, t, geneExtractor.ContainedPawn);
+            return JobMaker.MakeJob(MB_DefOf.MB_OperateOnPawn, t, geneExtractor.ContainedPawn);
         }
     }
 }
