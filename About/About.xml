@@ -9,4 +9,18 @@
     <description>
             Danke mod, medieval biotech.
     </description>
+    <loadAfter>
+		<li>brrainz.harmony</li>
+		<li>OskarPotocki.VanillaFactionsExpanded.Core</li>
+		<li>LWM.DeepStorage</li>
+		<li>syrchalis.processor.framework</li>
+		<li>OskarPotocki.VanillaExpanded.RoyaltyPatches</li>
+	</loadAfter>
+    <modDependencies>
+	  <li>
+		<packageId>DankPyon.Medieval.Overhaul</packageId>
+		<displayName>Medieval Overhaul</displayName>
+		<steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2553700067</steamWorkshopUrl>
+	  </li>
+	</modDependencies>
 </ModMetaData>
