@@ -46,6 +46,13 @@
 		</value>
 	</Operation>
 
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="DeathrestAccelerator"]/graphicData</xpath>
+		<value>
+			<shaderType>CutoutComplex</shaderType>
+		</value>
+	</Operation>
+
 	<Operation Class="PatchOperationReplace">
 		<xpath>Defs/ThingDef[defName="DeathrestAccelerator"]/label</xpath>
 		<value>
@@ -63,6 +70,128 @@
 					<li>Metallic</li>
 					<li>Stony</li>
             </stuffCategories>
+		</value>
+	</Operation>
+
+	<!-- ===== Hemopump =====-->
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="Hemopump"]/graphicData/drawSize</xpath>
+		<value>
+			<drawSize>(4,4)</drawSize>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="Hemopump"]/defaultPlacingRot</xpath>
+		<value>
+			<defaultPlacingRot>South</defaultPlacingRot>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="Hemopump"]/graphicData</xpath>
+		<value>
+			<shaderType>CutoutComplex</shaderType>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="Hemopump"]/size</xpath>
+		<value>
+			<size>(1,1)</size>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="Hemopump"]/label</xpath>
+		<value>
+			<label>blood altar</label>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="Hemopump"]</xpath>
+		<value>
+			<uiIconScale>0.5</uiIconScale>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="Hemopump"]</xpath>
+		<value>
+			<costStuffCount>100</costStuffCount>
+            <stuffCategories>
+                    <li>DankPyon_RawWood</li>
+                    <li>Woody</li>
+					<li>Metallic</li>
+					<li>Stony</li>
+            </stuffCategories>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="Hemopump"]/statBases/WorkToBuild</xpath>
+		<value>
+			<WorkToBuild>30000</WorkToBuild>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="Hemopump"]/statBases</xpath>
+		<value>
+			<Beauty>100</Beauty>
+		</value>
+	</Operation>
+
+	<!-- ===== Psychofluid Pump =====-->
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="PsychofluidPump"]/graphicData</xpath>
+		<value>
+			<graphicData>
+				<texPath>Things/Building/Misc/PsychofluidPump/PsychofluidPump</texPath>
+				<graphicClass>Graphic_Single</graphicClass>
+				<drawSize>(3, 3)</drawSize>
+				<damageData>
+					<rect>(0.3,0.2,0.7,1.8)</rect>
+				</damageData>
+			</graphicData>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="PsychofluidPump"]</xpath>
+		<value>
+			<altitudeLayer>FloorEmplacement</altitudeLayer>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="PsychofluidPump"]/statBases</xpath>
+		<value>
+			<statBases>
+				<MaxHitPoints>200</MaxHitPoints>
+				<WorkToBuild>4000</WorkToBuild>
+				<Mass>2</Mass>
+				<Flammability>0</Flammability>
+			</statBases>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="PsychofluidPump"]</xpath>
+		<value>
+			<building>
+				<isEdifice>false</isEdifice>
+			</building>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="PsychofluidPump"]/costList</xpath>
+		<value>
+			<costList>
+				<HemogenPack>10</HemogenPack>
+			</costList>
 		</value>
 	</Operation>
 </Patch>

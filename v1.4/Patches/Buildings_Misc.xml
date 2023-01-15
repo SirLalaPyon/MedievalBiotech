@@ -65,6 +65,13 @@
 	</Operation>
 
 	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="GeneBank"]/description</xpath>
+		<value>
+			<description>This building can store gene potions and make them usable to create new xenogerms, when placed near a gene assembler. Large gene libraries require many gene potion banks.\n\nWhen filled with insect jelly, gene banks prevent genepacks from deteriorating and will slowly repair deterioration.</description>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
 		<xpath>Defs/ThingDef[defName="GeneBank"]/graphicData/drawSize</xpath>
 		<value>
 			<drawSize>(2, 2)</drawSize>
