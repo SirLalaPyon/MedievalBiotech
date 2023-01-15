@@ -10,25 +10,6 @@ using Verse.AI;
 
 namespace MedievalBiotech
 {
-    [StaticConstructorOnStartup]
-    public static class HarmonyPatches
-    {
-        static HarmonyPatches()
-        {
-            new Harmony("ConsumableGenepackMod").PatchAll();
-        }
-    }
-
-    [HarmonyPatch(typeof(CompGenepackContainer), "PowerOn", MethodType.Getter)]
-    public static class CompGenepackContainer_PowerOn_Patch
-    {
-        public static bool Prefix(ref bool __result, CompGenepackContainer __instance)
-        {
-            __result = __instance.parent.TryGetComp<CompRefuelable>().HasFuel;
-            return false;
-        }
-    }
-
     [HarmonyPatch(typeof(Building_GeneExtractor), "PowerOn", MethodType.Getter)]
     public static class Building_GeneExtractor_PowerOn_Patch
     {
@@ -38,6 +19,8 @@ namespace MedievalBiotech
             return false;
         }
     }
+
+
 
     [HarmonyPatch(typeof(Building_GeneExtractor), "ContainedPawn", MethodType.Getter)]
     public static class Building_GeneExtractor_ContainedPawn_Patch
@@ -51,7 +34,7 @@ namespace MedievalBiotech
                 {
                     __result = corpse.InnerPawn;
                 }
-                else if (firstThing is Pawn pawn) 
+                else if (firstThing is Pawn pawn)
                 {
                     __result = pawn;
                 }
@@ -72,8 +55,8 @@ namespace MedievalBiotech
                 Thing t = thingList[i];
                 if (t is Corpse corpse && corpse.GetRotStage() == RotStage.Fresh)
                 {
-                    var geneExtractor = (Building_GeneExtractor)GenClosest.ClosestThingReachable(corpse.PositionHeld, corpse.MapHeld, 
-                        ThingRequest.ForDef(ThingDefOf.GeneExtractor), PathEndMode.InteractionCell, TraverseParms.For(pawn), 9999f, 
+                    var geneExtractor = (Building_GeneExtractor)GenClosest.ClosestThingReachable(corpse.PositionHeld, corpse.MapHeld,
+                        ThingRequest.ForDef(ThingDefOf.GeneExtractor), PathEndMode.InteractionCell, TraverseParms.For(pawn), 9999f,
                         (Thing x) => ((Building_GeneExtractor)x).CanAcceptPawn(corpse.InnerPawn) && pawn.CanReserve(x, 1, -1, null, true));
                     if (geneExtractor is null || !pawn.CanReserveAndReach(corpse, PathEndMode.OnCell, Danger.Deadly, 1, -1, null, ignoreOtherReservations: true))
                     {
@@ -90,79 +73,7 @@ namespace MedievalBiotech
         }
     }
 
-    [HarmonyPatch(typeof(Pawn_TraderTracker), "ColonyThingsWillingToBuy")]
-    public static class Pawn_TraderTracker_ColonyThingsWillingToBuy_Patch
-    {
-        public static IEnumerable<Thing> Postfix(IEnumerable<Thing> __result, Pawn_TraderTracker __instance)
-        {
-            foreach (Thing thing in __result)
-            {
-                yield return thing;
-            }
-            if (ModsConfig.BiotechActive)
-            {
-                IEnumerable<Building> enumerable2 = __instance.pawn.Map.listerBuildings.AllBuildingsColonistOfDef(MB_DefOf.MB_GenePotionsRack);
-                foreach (Building item2 in enumerable2)
-                {
-                    if (!__instance.ReachableForTrade(item2))
-                    {
-                        continue;
-                    }
-                    CompGenepackContainer compGenepackContainer = item2.TryGetComp<CompGenepackContainer>();
-                    if (compGenepackContainer == null)
-                    {
-                        continue;
-                    }
-                    List<Genepack> containedGenepacks = compGenepackContainer.ContainedGenepacks;
-                    foreach (Genepack item3 in containedGenepacks)
-                    {
-                        yield return item3;
-                    }
-                }
-            }
-        }
-    }
 
-    [HarmonyPatch(typeof(TradeUtility), "AllLaunchableThingsForTrade")]
-    public static class TradeUtility_AllLaunchableThingsForTrade_Patch
-    {
-        public static IEnumerable<Thing> Postfix(IEnumerable<Thing> __result, Map map, ITrader trader = null)
-        {
-            foreach (Thing thing in __result)
-            {
-                yield return thing;
-            }
-            HashSet<Thing> yieldedThings = new HashSet<Thing>();
-            foreach (Building_OrbitalTradeBeacon item in Building_OrbitalTradeBeacon.AllPowered(map))
-            {
-                foreach (IntVec3 tradeableCell in item.TradeableCells)
-                {
-                    List<Thing> thingList = tradeableCell.GetThingList(map);
-                    for (int i = 0; i < thingList.Count; i++)
-                    {
-                        Thing t = thingList[i];
-                        if (ModsConfig.BiotechActive && t.def == MB_DefOf.MB_GenePotionsRack)
-                        {
-                            CompGenepackContainer compGenepackContainer = t.TryGetComp<CompGenepackContainer>();
-                            if (compGenepackContainer == null)
-                            {
-                                continue;
-                            }
-                            List<Genepack> containedGenepacks = compGenepackContainer.ContainedGenepacks;
-                            foreach (Genepack item2 in containedGenepacks)
-                            {
-                                if (TradeUtility.PlayerSellableNow(t, trader) && !yieldedThings.Contains(item2))
-                                {
-                                    yieldedThings.Add(item2);
-                                    yield return item2;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
 
     [HarmonyPatch(typeof(Building_GeneExtractor), "CanAcceptPawn")]
     public static class Building_GeneExtractor_CanAcceptPawn_Patch
@@ -313,7 +224,7 @@ namespace MedievalBiotech
             }
         }
 
-        public static bool AlwaysFalse(object thing, int hash)
+        public static bool AlwaysFalse(Thing thing, int hash)
         {
             return false;
         }

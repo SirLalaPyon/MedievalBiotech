@@ -42,9 +42,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HarmonyPatches\GeneAssembler_Patches.cs" />
+    <Compile Include="HarmonyPatches\GenePack_Patches.cs" />
+    <Compile Include="HarmonyPatches\GeneExtractor_Patches.cs" />
     <Compile Include="MB_DefOf.cs" />
     <Compile Include="ConsumableGenepack.cs" />
-    <Compile Include="HarmonyPatches.cs" />
+    <Compile Include="HarmonyPatches\HarmonyPatches.cs" />
     <Compile Include="JobDriver_CarryCorpseToTable.cs" />
     <Compile Include="JobDriver_OperateOnPawn.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -64,5 +67,6 @@
     </PackageReference>
     <Publicize Include="Assembly-CSharp" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

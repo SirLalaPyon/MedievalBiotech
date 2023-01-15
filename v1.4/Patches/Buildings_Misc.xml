@@ -156,6 +156,22 @@
 	</Operation>
 
 	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/EffecterDef[defName="GeneAssembler_Working"]/children</xpath>
+		<value>
+			<children>
+			<li>
+				<subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+				<scale>0.3~0.7</scale>
+				<ticksBetweenMotes>20</ticksBetweenMotes>
+				<positionLerpFactor>0.6</positionLerpFactor>
+				<positionRadius>0.6</positionRadius>
+				<moteDef>Mote_CookBit</moteDef>
+			</li>
+			</children>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationReplace">
 		<xpath>Defs/ThingDef[defName="GeneAssembler"]/costList</xpath>
 		<value>
 			<costList>
@@ -163,7 +179,7 @@
 			</costList>
 		</value>
 	</Operation>
-
+	
 	<!-- ===== Gene Processor =====-->
 	<Operation Class="PatchOperationReplace">
 		<xpath>Defs/ThingDef[defName="GeneProcessor"]/graphicData/drawSize</xpath>
