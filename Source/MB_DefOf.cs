@@ -11,5 +11,6 @@ namespace MedievalBiotech
         public static EffecterDef ButcherFlesh;
         public static SoundDef Recipe_ButcherCorpseFlesh;
         public static ThingDef MB_GenePotionsRack;
+        public static ThingDef GeneProcessor;
     }
 }

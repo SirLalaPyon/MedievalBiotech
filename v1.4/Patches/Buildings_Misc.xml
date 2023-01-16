@@ -221,4 +221,43 @@
             </stuffCategories>
 		</value>
 	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="GeneProcessor"]</xpath>
+		<value>
+			<tickerType>Normal</tickerType>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="GeneProcessor"]/comps</xpath>
+		<value>
+			<li Class="CompProperties_Refuelable">
+				<fuelConsumptionRate>0.5</fuelConsumptionRate>
+				<fuelCapacity>10</fuelCapacity>
+				<fuelFilter>
+					<thingDefs>
+						<li>WoodLog</li>
+					</thingDefs>
+				</fuelFilter>
+				<initialFuelPercent>0</initialFuelPercent>
+				<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
+			</li>
+		</value>
+	</Operation>
+	
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/RulePackDef[defName="NamerGenepack"]/rulePack</xpath>
+		<value>
+			<rulePack>
+			<rulesStrings>
+				<li>r_name->gene potion ([geneWord][otherGenesInfo])</li>
+		
+				<li>otherGenesInfo(geneCount==1)-></li>
+				<li>otherGenesInfo(geneCount>=2)-> +[geneCountMinusOne]</li>
+			</rulesStrings>
+			</rulePack>
+		</value>
+	</Operation>
 </Patch>

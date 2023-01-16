@@ -57,6 +57,9 @@
                     </thingCategories>
                 </value>
             </li>
+            <li Class="PatchOperationRemove">
+                <xpath>Defs/ThingDef[defName = "Genepack"]/statBases/DeteriorationRate</xpath>
+            </li>
         </operations>
     </Operation>
 

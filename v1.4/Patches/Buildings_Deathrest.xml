@@ -10,6 +10,19 @@
 							defName="DeathrestAccelerator"]/comps/li[@Class = "CompProperties_Power"]</xpath>
 	</Operation>
 
+    <Operation Class="PatchOperationRemove">
+		<xpath>Defs/ThingDef[defName="DeathrestCasket" or 
+							defName="Hemopump" or 
+							defName="HemogenAmplifier" or 
+							defName="GlucosoidPump" or 
+							defName="PsychofluidPump" or 
+							defName="DeathrestAccelerator"]/comps/li[@Class = "CompProperties_Flickable"]</xpath>
+	</Operation>
+	
+	<Operation Class="PatchOperationRemove">
+		<xpath>Defs/ThingDef[@Name="DeathrestBuildingHemogenFueled"]/comps/li[@Class = "CompProperties_Power"]</xpath>
+	</Operation>
+	
 	<Operation Class="PatchOperationRemove">
 		<xpath>Defs/ThingDef[@Name="DeathrestBuildingHemogenFueled"]/comps/li[@Class = "CompProperties_Flickable"]</xpath>
 	</Operation>

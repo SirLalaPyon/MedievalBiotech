@@ -48,17 +48,6 @@
 				<maxSimultaneous>100</maxSimultaneous>
 				<maxDistance>12.9</maxDistance>
 			</li>
-			<li Class="CompProperties_Refuelable">
-				<fuelConsumptionRate>0.5</fuelConsumptionRate>
-				<fuelCapacity>5</fuelCapacity>
-				<fuelFilter>
-					<thingDefs>
-						<li>InsectJelly</li>
-					</thingDefs>
-				</fuelFilter>
-				<initialFuelPercent>0</initialFuelPercent>
-				<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
-			</li>
 		</comps>
 	</ThingDef>
 

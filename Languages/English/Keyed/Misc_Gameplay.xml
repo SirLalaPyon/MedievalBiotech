@@ -6,4 +6,5 @@
 	<AlertGenebankUnpoweredDesc>A gene potion bank does not have fuel, so the genepacks inside it are slowly deteriorating. Add insect jelly to the gene potion bank to prevent gene potions from deteriorating
 
 Once the gene potion bank is fueled. it will slowly reverse the deterioration of the gene potions inside it.</AlertGenebankUnpoweredDesc>
+	<MB.GenepackInactive>{0} (Inactive)</MB.GenepackInactive>
 </LanguageData>
