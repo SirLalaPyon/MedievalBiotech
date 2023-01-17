@@ -55,7 +55,7 @@
 		</value>
 	</Operation>
 
-	<!-- ===== Deathrest Accelerator =====-->
+	<!-- ===== Deathrest Accelerator (Incense)=====-->
 	<Operation Class="PatchOperationReplace">
 		<xpath>Defs/ThingDef[defName="DeathrestAccelerator"]/graphicData/drawSize</xpath>
 		<value>
@@ -90,30 +90,37 @@
 		</value>
 	</Operation>
 
-	<!-- ===== Hemopump =====-->
+	<!-- ===== Hemopump & Psychofluid pump (Altars) =====-->
 	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/ThingDef[defName="Hemopump"]/graphicData/drawSize</xpath>
+		<xpath>Defs/ThingDef[defName="Hemopump" or defName="PsychofluidPump"]/graphicData/drawSize</xpath>
 		<value>
 			<drawSize>(4,4)</drawSize>
 		</value>
 	</Operation>
 
 	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/ThingDef[defName="Hemopump"]/defaultPlacingRot</xpath>
+		<xpath>Defs/ThingDef[defName="Hemopump"]/graphicData/texPath</xpath>
+		<value>
+			<texPath>Things/Building/Misc/AltarPrince/AltarPrince</texPath>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="Hemopump" or defName="PsychofluidPump"]/defaultPlacingRot</xpath>
 		<value>
 			<defaultPlacingRot>South</defaultPlacingRot>
 		</value>
 	</Operation>
 
 	<Operation Class="PatchOperationAdd">
-		<xpath>Defs/ThingDef[defName="Hemopump"]/graphicData</xpath>
+		<xpath>Defs/ThingDef[defName="Hemopump" or defName="PsychofluidPump"]/graphicData</xpath>
 		<value>
 			<shaderType>CutoutComplex</shaderType>
 		</value>
 	</Operation>
 
 	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/ThingDef[defName="Hemopump"]/size</xpath>
+		<xpath>Defs/ThingDef[defName="Hemopump" or defName="PsychofluidPump"]/size</xpath>
 		<value>
 			<size>(1,1)</size>
 		</value>
@@ -122,19 +129,26 @@
 	<Operation Class="PatchOperationReplace">
 		<xpath>Defs/ThingDef[defName="Hemopump"]/label</xpath>
 		<value>
-			<label>blood altar</label>
+			<label>altar of the prince</label>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="PsychofluidPump"]/label</xpath>
+		<value>
+			<label>altar of the magi</label>
 		</value>
 	</Operation>
 
 	<Operation Class="PatchOperationAdd">
-		<xpath>Defs/ThingDef[defName="Hemopump"]</xpath>
+		<xpath>Defs/ThingDef[defName="Hemopump" or defName="PsychofluidPump"]</xpath>
 		<value>
 			<uiIconScale>0.5</uiIconScale>
 		</value>
 	</Operation>
 
 	<Operation Class="PatchOperationAdd">
-		<xpath>Defs/ThingDef[defName="Hemopump"]</xpath>
+		<xpath>Defs/ThingDef[defName="Hemopump" or defName="PsychofluidPump"]</xpath>
 		<value>
 			<costStuffCount>100</costStuffCount>
             <stuffCategories>
@@ -147,25 +161,35 @@
 	</Operation>
 
 	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/ThingDef[defName="Hemopump"]/statBases/WorkToBuild</xpath>
+		<xpath>Defs/ThingDef[defName="Hemopump" or defName="PsychofluidPump"]/costList</xpath>
+		<value>
+            <costList>
+				<Gold>25</Gold>
+				<HemogenPack>5</HemogenPack>
+            </costList>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="Hemopump" or defName="PsychofluidPump"]/statBases/WorkToBuild</xpath>
 		<value>
 			<WorkToBuild>30000</WorkToBuild>
 		</value>
 	</Operation>
 
 	<Operation Class="PatchOperationAdd">
-		<xpath>Defs/ThingDef[defName="Hemopump"]/statBases</xpath>
+		<xpath>Defs/ThingDef[defName="Hemopump" or defName="PsychofluidPump"]/statBases</xpath>
 		<value>
 			<Beauty>100</Beauty>
 		</value>
 	</Operation>
 
-	<!-- ===== Psychofluid Pump =====-->
+	<!-- ===== Glucosoid Pump (blood circle)=====-->
 	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/ThingDef[defName="PsychofluidPump"]/graphicData</xpath>
+		<xpath>Defs/ThingDef[defName="GlucosoidPump"]/graphicData</xpath>
 		<value>
 			<graphicData>
-				<texPath>Things/Building/Misc/PsychofluidPump/PsychofluidPump</texPath>
+				<texPath>Things/Building/Misc/GlucosoidPump/GlucosoidPump</texPath>
 				<graphicClass>Graphic_Single</graphicClass>
 				<drawSize>(3, 3)</drawSize>
 				<damageData>
@@ -176,14 +200,14 @@
 	</Operation>
 
 	<Operation Class="PatchOperationAdd">
-		<xpath>Defs/ThingDef[defName="PsychofluidPump"]</xpath>
+		<xpath>Defs/ThingDef[defName="GlucosoidPump"]</xpath>
 		<value>
 			<altitudeLayer>FloorEmplacement</altitudeLayer>
 		</value>
 	</Operation>
 
 	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/ThingDef[defName="PsychofluidPump"]/statBases</xpath>
+		<xpath>Defs/ThingDef[defName="GlucosoidPump"]/statBases</xpath>
 		<value>
 			<statBases>
 				<MaxHitPoints>200</MaxHitPoints>
@@ -195,7 +219,7 @@
 	</Operation>
 
 	<Operation Class="PatchOperationAdd">
-		<xpath>Defs/ThingDef[defName="PsychofluidPump"]</xpath>
+		<xpath>Defs/ThingDef[defName="GlucosoidPump"]</xpath>
 		<value>
 			<building>
 				<isEdifice>false</isEdifice>
@@ -204,11 +228,145 @@
 	</Operation>
 
 	<Operation Class="PatchOperationReplace">
-		<xpath>Defs/ThingDef[defName="PsychofluidPump"]/costList</xpath>
+		<xpath>Defs/ThingDef[defName="GlucosoidPump"]/costList</xpath>
 		<value>
 			<costList>
 				<HemogenPack>10</HemogenPack>
 			</costList>
+		</value>
+	</Operation>
+
+		<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="GlucosoidPump"]/label</xpath>
+		<value>
+			<label>blood circle</label>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="GlucosoidPump"]</xpath>
+		<value>
+			<uiIconScale>0.8</uiIconScale>
+		</value>
+	</Operation>
+
+	<!-- ===== Hemogen Amplifier (candleholder)=====-->
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="HemogenAmplifier"]/defaultPlacingRot</xpath>
+		<value>
+			<defaultPlacingRot>North</defaultPlacingRot>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="HemogenAmplifier"]</xpath>
+		<value>
+			<uiIconScale>0.5</uiIconScale>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="HemogenAmplifier"]/label</xpath>
+		<value>
+			<label>blood candleholder</label>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="HemogenAmplifier"]</xpath>
+		<value>
+			<rotatable>false</rotatable>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="HemogenAmplifier"]/graphicData</xpath>
+		<value>
+			<graphicData>
+				<texPath>Things/Building/Misc/HemogenAmplifier/HemogenAmplifier</texPath>
+				<graphicClass>Graphic_Single</graphicClass>
+				<drawSize>(2,2)</drawSize>
+			</graphicData>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="HemogenAmplifier"]/statBases</xpath>
+		<value>
+			<statBases>
+				<MaxHitPoints>100</MaxHitPoints>
+				<WorkToBuild>5000</WorkToBuild>
+				<Mass>5</Mass>
+				<Flammability>0.4</Flammability>
+			</statBases>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="HemogenAmplifier"]/size</xpath>
+		<value>
+			<size>(1,1)</size>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="HemogenAmplifier"]/costList</xpath>
+		<value>
+			<costList>
+				<Gold>50</Gold>
+				<HemogenPack>5</HemogenPack>
+			</costList>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="HemogenAmplifier"]</xpath>
+		<value>
+			<altitudeLayer>BuildingOnTop</altitudeLayer>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="HemogenAmplifier"]/comps</xpath>
+		<value>
+			<li Class="CompProperties_Glower">
+				<glowRadius>10</glowRadius>
+				<glowColor>(460, 220, 205, 0)</glowColor>
+			</li>
+			<li Class="CompProperties_SanguophageMeetingFire">
+				<fireSize>0.75</fireSize>
+				<offset>(0,0,0.50)</offset>
+			</li>
+			<li Class="CompProperties_HeatPusher">
+				<compClass>CompHeatPusherPowered</compClass>
+				<heatPerSecond>3.5</heatPerSecond>
+				<heatPushMaxTemperature>23</heatPushMaxTemperature>
+			</li>
+			<li Class="CompProperties_MeditationFocus">
+				<statDef>MeditationFocusStrength</statDef>
+				<focusTypes><li>Flame</li></focusTypes>
+				<offsets>
+					<li Class="FocusStrengthOffset_Lit">
+						<offset>0.1</offset>
+					</li>
+					<li Class="FocusStrengthOffset_BuildingDefsLit">
+						<defs>
+							<li>Campfire</li>
+							<li>TorchLamp</li>
+							<li>DankPyon_Candles</li>
+							<li>DankPyon_CandleStand</li>
+							<li MayRequire="Ludeon.RimWorld.Royalty">Brazier</li>
+							<li MayRequire="Ludeon.RimWorld.Ideology">Darktorch</li>
+							<li MayRequire="Ludeon.RimWorld.Ideology">DarktorchFungus</li>
+						</defs>
+						<offsetPerBuilding>0.01</offsetPerBuilding>
+						<radius>9.9</radius>
+						<maxBuildings>8</maxBuildings>
+						<explanationKey>MeditationFocusPerFlame</explanationKey>
+						<explanationKeyAbstract>MeditationFocusPerFlameAbstract</explanationKeyAbstract>
+					</li>
+				</offsets>
+			</li>
 		</value>
 	</Operation>
 </Patch>

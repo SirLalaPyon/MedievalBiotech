@@ -8,6 +8,7 @@
 		<graphicData>
 			<texPath>Things/Building/Misc/GenePotionRack/GenePotionRack</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
 			<drawSize>(2, 2)</drawSize>
 			<shadowData>
 				<volume>(1.7, 0.3, 0.85)</volume>
@@ -31,11 +32,20 @@
 		<inspectorTabs>
 			<li>ITab_ContentsGenepackHolder</li>
 		</inspectorTabs>
+
+		<costStuffCount>50</costStuffCount>
+		<stuffCategories>
+			<li>DankPyon_RawWood</li>
+			<li>Woody</li>
+			<li>Metallic</li>
+			<li>Stony</li>
+		</stuffCategories>
+
 		<costList>
-			<Steel>50</Steel>
-			<ComponentIndustrial>1</ComponentIndustrial>
+			<DankPyon_ComponentBasic>5</DankPyon_ComponentBasic>
 		</costList>
 		<constructionSkillPrerequisite>4</constructionSkillPrerequisite>
+
 		<descriptionHyperlinks>
 			<ThingDef>Genepack</ThingDef>
 			<ThingDef>GeneAssembler</ThingDef>
@@ -50,5 +60,81 @@
 			</li>
 		</comps>
 	</ThingDef>
+
+	<ThingDef ParentName="BuildingBase">
+    <defName>MB_MutagenRevitalizer</defName>
+    <label>mutagen revitilizer</label>
+    <description>A genetic analysis and processing system. Placed near a gene assembler, it increases the maximum genetic complexity of the xenogerms you can assemble. Building multiple gene processors will increase the genetic complexity limit further.</description>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.4</fillPercent>
+    <pathCost>14</pathCost>
+    <rotatable>false</rotatable>
+    <graphicData>
+      <texPath>Things/Building/Misc/MutagenRevitalizer/MutagenRevitalizer</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+	  <shaderType>CutoutComplex</shaderType>
+      <drawSize>(4, 4)</drawSize>
+      <shadowData>
+        <volume>(1.5, 0.4, 1.5)</volume>
+      </shadowData>
+    </graphicData>
+    <size>(2, 2)</size>
+    <canOverlapZones>false</canOverlapZones>
+    <defaultPlacingRot>North</defaultPlacingRot>
+    <designationCategory>Biotech</designationCategory>
+    <uiOrder>2100</uiOrder>
+    <researchPrerequisites>
+      <li>Xenogermination</li>
+    </researchPrerequisites>
+
+	<tickerType>Normal</tickerType>
+
+    <descriptionHyperlinks>
+      <ThingDef>GeneAssembler</ThingDef>
+      <ThingDef>GeneBank</ThingDef>
+      <ThingDef>Genepack</ThingDef>
+      <ThingDef>Xenogerm</ThingDef>
+    </descriptionHyperlinks>
+
+    <statBases>
+      <MaxHitPoints>350</MaxHitPoints>
+      <WorkToBuild>9000</WorkToBuild>
+      <Mass>85</Mass>
+      <Flammability>0.5</Flammability>
+    </statBases>
+
+	<costStuffCount>200</costStuffCount>
+	<stuffCategories>
+		<li>Metallic</li>
+		<li>Stony</li>
+	</stuffCategories>
+
+    <costList>
+      	<DankPyon_ComponentBasic>10</DankPyon_ComponentBasic>
+    </costList>
+
+    <constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+    <building>
+      <buildingTags>
+        <li>Biotech</li>
+      </buildingTags>
+    </building>
+    <comps>
+		<li Class="CompProperties_Refuelable">
+			<fuelConsumptionRate>0.5</fuelConsumptionRate> 
+			<fuelCapacity>5</fuelCapacity>
+			<fuelLabel>Hemogen</fuelLabel>
+			<fuelFilter>
+			<thingDefs>
+				<li>HemogenPack</li>
+			</thingDefs>
+			</fuelFilter>
+			<initialFuelPercent>0</initialFuelPercent>
+			<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
+			<externalTicking>true</externalTicking>
+			<autoRefuelPercent>0.05</autoRefuelPercent>
+      </li>
+    </comps>
+  </ThingDef>
 
 </Defs>

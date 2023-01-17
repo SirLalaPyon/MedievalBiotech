@@ -214,7 +214,7 @@
 	<Operation Class="PatchOperationAdd">
 		<xpath>Defs/ThingDef[defName="GeneProcessor"]</xpath>
 		<value>
-			<costStuffCount>199</costStuffCount>
+			<costStuffCount>200</costStuffCount>
             <stuffCategories>
 					<li>Metallic</li>
 					<li>Stony</li>
@@ -246,13 +246,13 @@
 		</value>
 	</Operation>
 	
-
+	<!-- ===== Gene Pack =====-->
 	<Operation Class="PatchOperationReplace">
 		<xpath>Defs/RulePackDef[defName="NamerGenepack"]/rulePack</xpath>
 		<value>
 			<rulePack>
 			<rulesStrings>
-				<li>r_name->gene potion ([geneWord][otherGenesInfo])</li>
+				<li>r_name->mutagen potion ([geneWord][otherGenesInfo])</li>
 		
 				<li>otherGenesInfo(geneCount==1)-></li>
 				<li>otherGenesInfo(geneCount>=2)-> +[geneCountMinusOne]</li>
