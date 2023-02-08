@@ -2,11 +2,19 @@
 <Patch>
 	<!-- Remove electricity from every Biotech Building-->
     <Operation Class="PatchOperationRemove">
-		<xpath>Defs/ThingDef[defName="SubcoreEncoder"]/comps/li[@Class = "CompProperties_Power"]</xpath>
+		<xpath>Defs/ThingDef[defName="SubcoreEncoder" or @Name="SubcoreScannerBase"]/comps/li[@Class = "CompProperties_Power"]</xpath>
 	</Operation>
 
 	<Operation Class="PatchOperationRemove">
-		<xpath>Defs/ThingDef[defName="SubcoreEncoder"]/comps/li[@Class = "CompProperties_Flickable"]</xpath>
+		<xpath>Defs/ThingDef[defName="SubcoreEncoder"  or @Name="SubcoreScannerBase"]/comps/li[@Class = "CompProperties_Flickable"]</xpath>
+	</Operation>
+
+	<!-- Subcore Encoder (Gem infuser)-->
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="SubcoreEncoder"]/label</xpath>
+		<value>
+			<label>gem infuser</label>
+		</value>
 	</Operation>
 
 	<!-- Subcore Encoder (Gem infuser)-->

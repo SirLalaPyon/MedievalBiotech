@@ -422,7 +422,7 @@
 
 		<rotatable>false</rotatable>
 		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
-		<designationCategory>Power</designationCategory>
+		<designationCategory>MB_PipeNetworks</designationCategory>
 		<uiOrder>2110</uiOrder>
 		<placeWorkers>
 		<li>PlaceWorker_OnSteamGeyser</li>
